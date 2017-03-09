@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProjectsController extends Controller
 {
@@ -13,9 +14,11 @@ class ProjectsController extends Controller
      *
      * @return Response
      */
-    public function index(){
+    public function index(Request $request){
         $projects  = Project::all();
         $message = 'hello';
+        \Debugbar::info($request);
+        \Debugbar::info($projects);
         return view('projects.index', compact('projects','message'));
     }
 

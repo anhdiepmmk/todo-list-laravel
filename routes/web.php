@@ -11,8 +11,8 @@
 |
 */
 // Provide controller methods with object instead of ID
-Route::model('tasks', 'Task');
-Route::model('projects', 'Project');
+Route::model('tasks', 'App\Task');
+Route::model('projects', 'App\Project');
 
 Route::bind('tasks', function ($value,$route){
     //select * from `tasks` where `slug` = ?

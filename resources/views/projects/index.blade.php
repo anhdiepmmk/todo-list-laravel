@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title','Page title')
+@section('content')
 
-@section('sidebar')
-    @parent
+    @if(!$projects->count())
+        You have no projects
+    @else
+        @foreach($projects as $project)
+            <li><a href="{{ route('projects.show', $project->slug) }}">{{ $project->name }}</a></li>
+        @endforeach
+    @endif
 
-    <p>This is appended to the master sidebar.</p>
-
-
-
-    {{ ($message) }}
-@stop
+@endsection

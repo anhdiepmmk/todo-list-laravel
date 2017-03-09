@@ -194,7 +194,7 @@ return [
 
     'aliases' => [
 
-        'Debugbar' => 'Barryvdh\Debugbar\Facade',
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
